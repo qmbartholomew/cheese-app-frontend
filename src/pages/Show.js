@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
-const Show = (props) => {
+function Show(props) {
+    const navigate = useNavigate()
     const params = useParams()
     const id = params.id
     const cheeses = props.cheese
-    const navigate = useNavigate()
-
     const [editForm, setEditForm] = useState({})
+    
     useEffect(() => {
         if(props.cheese) {
         const cheese = cheeses.find((c) => c._id === id)
