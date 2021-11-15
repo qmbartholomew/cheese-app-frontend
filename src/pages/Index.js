@@ -56,15 +56,17 @@ const Index = (props) => {
         return (
             <section>
                 {form}
-            {props.cheese.map((cheese) => {
-               return <div key={cheese._id} className='cheese'>
-                   <Link to={`/cheese/${cheese._id}`}>
-                       <h1>{cheese.name}</h1>
-                   </Link>
-                   <img src={cheese.image} alt={cheese.name} />
-                   <h3>{cheese.title}</h3>
-               </div> 
-            })}
+                <div className='display'>
+                    {props.cheese.map((cheese) => {
+                    return <div key={cheese._id} className='cheese'>
+                        <Link to={`/cheese/${cheese._id}`}>
+                            <h1>{cheese.name}</h1>
+                        </Link>
+                        <img src={cheese.image} alt={cheese.name} className='image' />
+                        <h3>{cheese.title}</h3>
+                        </div> 
+                    })}
+                </div>
             </section>
             )
     } else {
